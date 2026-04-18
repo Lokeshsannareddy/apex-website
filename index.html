@@ -143,50 +143,43 @@
 
     /* ── PRINCIPLES ── */
     #principles {
-      background: var(--forest);
+      background: var(--cream);
       position: relative; overflow: hidden;
     }
-    #principles::before {
-      content: '';
-      position: absolute; top: 0; right: 0;
-      width: 400px; height: 100%;
-      background: url('https://images.unsplash.com/photo-1518623489648-a173ef7824f3?auto=format&fit=crop&w=800&q=60')
-        center/cover no-repeat;
-      opacity: 0.08;
-    }
+    #principles::before { display: none; }
     .principles-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 0;
       margin-top: 3rem;
       position: relative; z-index: 1;
-      border: 1px solid rgba(201,168,76,0.2);
+      border: 1px solid rgba(139,115,85,0.18);
     }
     .principle {
       padding: 2.5rem;
-      border-right: 1px solid rgba(201,168,76,0.2);
-      border-bottom: 1px solid rgba(201,168,76,0.2);
+      border-right: 1px solid rgba(139,115,85,0.18);
+      border-bottom: 1px solid rgba(139,115,85,0.18);
     }
     .principle:nth-child(3n) { border-right: none; }
     .principle:nth-child(4), .principle:nth-child(5), .principle:nth-child(6) { border-bottom: none; }
     .principle-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem; color: var(--gold); opacity: 0.3;
+      font-size: 2.4rem; color: var(--bark); opacity: 0.45;
       line-height: 1; margin-bottom: 0.8rem;
     }
     .principle h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem; color: var(--cream);
+      font-size: 1.25rem; color: var(--forest);
       margin-bottom: 0.6rem;
     }
     .principle p {
-      color: rgba(245,240,232,0.5);
+      color: var(--gray);
       font-size: 0.88rem; font-weight: 300; line-height: 1.65;
     }
 
     /* ── WHY ── */
     #why {
-      background: var(--cream-dk);
+      background: var(--cream);
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 6rem; align-items: center;
     }
@@ -269,18 +262,13 @@
 
     /* ── CONTACT ── */
     #contact {
-      background: var(--forest);
+      background: var(--cream);
       text-align: center; position: relative; overflow: hidden;
     }
-    #contact::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1800&q=40') center/cover;
-      opacity: 0.06;
-    }
+    #contact::before { display: none; }
     #contact > * { position: relative; z-index: 1; }
     #contact p {
-      color: rgba(245,240,232,0.55);
+      color: var(--gray);
       max-width: 440px; margin: 0 auto 2rem;
       font-weight: 300;
     }
@@ -291,13 +279,13 @@
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .contact-form input, .contact-form textarea {
       width: 100%; padding: 0.9rem 1.1rem;
-      background: rgba(245,240,232,0.06);
-      border: 1px solid rgba(245,240,232,0.15);
-      color: var(--cream); font-family: 'Inter', sans-serif;
+      background: rgba(28,46,30,0.04);
+      border: 1px solid rgba(139,115,85,0.25);
+      color: var(--text); font-family: 'Inter', sans-serif;
       font-size: 0.88rem; outline: none; transition: border-color 0.2s;
     }
     .contact-form input::placeholder, .contact-form textarea::placeholder {
-      color: rgba(245,240,232,0.3);
+      color: rgba(42,42,34,0.3);
     }
     .contact-form input:focus, .contact-form textarea:focus {
       border-color: var(--gold);
@@ -395,9 +383,9 @@
 <!-- PRINCIPLES / CRITERIA -->
 <section id="principles">
   <div style="position:relative;z-index:1">
-    <div class="section-label" style="color:var(--gold-lt)">What We Look For</div>
-    <h2 class="section-title light">Acquisition Criteria</h2>
-    <div class="divider" style="background:var(--gold)"></div>
+    <div class="section-label">What We Look For</div>
+    <h2 class="section-title">Acquisition Criteria</h2>
+    <div class="divider"></div>
   </div>
   <div class="principles-grid">
     <div class="principle">
@@ -525,8 +513,8 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="section-label" style="justify-content:center;color:var(--gold-lt)">Get In Touch</div>
-  <h2 class="section-title light" style="text-align:center">Start a Conversation</h2>
+  <div class="section-label" style="justify-content:center;">Get In Touch</div>
+  <h2 class="section-title" style="text-align:center">Start a Conversation</h2>
   <div class="divider" style="margin:0 auto 1.5rem;"></div>
   <p>If you have built something worth keeping, we would like to talk. We are discreet, straightforward, and genuinely long-term in our thinking.</p>
   <form class="contact-form" onsubmit="return false;">
