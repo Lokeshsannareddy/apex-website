@@ -52,18 +52,13 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      background: var(--forest);
+      background: var(--cream);
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
       text-align: center; padding: 9rem 6% 7rem;
       position: relative; overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 60%, rgba(61,97,66,0.4) 0%, transparent 70%);
-      pointer-events: none;
-    }
+
     .hero-oak {
       width: 52px; height: 52px;
       margin-bottom: 1.8rem;
@@ -72,14 +67,14 @@
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.8rem, 5vw, 4.6rem);
-      font-weight: 300; color: var(--white);
+      font-weight: 300; color: var(--forest);
       line-height: 1.1; max-width: 680px;
       margin-bottom: 1.8rem;
       letter-spacing: -0.01em;
     }
     .hero h1 em { font-style: italic; color: var(--gold-lt); }
     .hero p {
-      color: rgba(245,240,232,0.65);
+      color: var(--gray);
       font-size: 1rem; max-width: 480px;
       margin-bottom: 3rem; font-weight: 300; letter-spacing: 0.01em;
     }
@@ -133,7 +128,7 @@
     .about-img-accent {
       position: absolute; bottom: -1.5rem; left: -1.5rem;
       width: 120px; height: 120px;
-      background: var(--forest); opacity: 0.08;
+      background: var(--cream); opacity: 0.08;
       z-index: 0;
     }
     .about-text p {
