@@ -52,16 +52,17 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      background:
-        linear-gradient(to bottom,
-          rgba(28,46,30,0.65) 0%,
-          rgba(28,46,30,0.4) 40%,
-          rgba(28,46,30,0.8) 100%),
-        url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2200&q=85')
-        center/cover no-repeat;
+      background: var(--forest);
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      text-align: center; padding: 9rem 6% 6rem;
+      text-align: center; padding: 9rem 6% 7rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 60%, rgba(61,97,66,0.4) 0%, transparent 70%);
+      pointer-events: none;
     }
     .hero-oak {
       width: 52px; height: 52px;
@@ -70,17 +71,17 @@
     }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+      font-size: clamp(2.8rem, 5vw, 4.6rem);
       font-weight: 300; color: var(--white);
-      line-height: 1.15; max-width: 760px;
-      margin-bottom: 1.6rem;
-      letter-spacing: 0.01em;
+      line-height: 1.1; max-width: 680px;
+      margin-bottom: 1.8rem;
+      letter-spacing: -0.01em;
     }
     .hero h1 em { font-style: italic; color: var(--gold-lt); }
     .hero p {
-      color: rgba(245,240,232,0.72);
-      font-size: 1.05rem; max-width: 520px;
-      margin-bottom: 2.8rem; font-weight: 300;
+      color: rgba(245,240,232,0.65);
+      font-size: 1rem; max-width: 480px;
+      margin-bottom: 3rem; font-weight: 300; letter-spacing: 0.01em;
     }
     .btn {
       display: inline-block; padding: 0.9rem 2.4rem;
