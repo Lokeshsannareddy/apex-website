@@ -4,628 +4,554 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Everoak Holdings</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy: #0d1f35;
-      --navy-mid: #1a3352;
-      --gold: #b8923a;
-      --gold-light: #d4a955;
-      --cream: #f8f5f0;
-      --white: #ffffff;
-      --gray: #6b7280;
-      --light-gray: #f3f4f6;
+      --forest:   #1c2e1e;
+      --forest-mid: #2d4a30;
+      --forest-light: #3d6142;
+      --gold:     #c9a84c;
+      --gold-lt:  #e0c070;
+      --cream:    #f5f0e8;
+      --cream-dk: #ede5d4;
+      --bark:     #8b7355;
+      --white:    #ffffff;
+      --text:     #2a2a22;
+      --gray:     #6b6b5a;
     }
 
     html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); line-height: 1.6; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--navy);
-      background: var(--white);
-      line-height: 1.6;
-    }
-
-    /* ── NAV ─────────────────────────────────────────────── */
+    /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem 5%;
-      background: rgba(13, 31, 53, 0.95);
-      backdrop-filter: blur(8px);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.4rem 6%;
+      background: rgba(28, 46, 30, 0.94);
+      backdrop-filter: blur(10px);
     }
     .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--white);
-      letter-spacing: 0.05em;
+      font-size: 1.15rem; font-weight: 400;
+      color: var(--cream); letter-spacing: 0.12em;
       text-decoration: none;
     }
-    .nav-logo span { color: var(--gold); }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
+    .nav-logo svg { width: 28px; height: 28px; opacity: 0.9; }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
     nav ul a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      color: rgba(245,240,232,0.7); text-decoration: none;
+      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
       transition: color 0.2s;
     }
-    nav ul a:hover { color: var(--gold-light); }
+    nav ul a:hover { color: var(--gold-lt); }
 
-    /* ── HERO ────────────────────────────────────────────── */
+    /* ── HERO ── */
     .hero {
       min-height: 100vh;
       background:
-        linear-gradient(to bottom, rgba(13,31,53,0.72) 0%, rgba(13,31,53,0.55) 60%, rgba(13,31,53,0.8) 100%),
-        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 8rem 5% 5rem;
+        linear-gradient(to bottom,
+          rgba(28,46,30,0.65) 0%,
+          rgba(28,46,30,0.4) 40%,
+          rgba(28,46,30,0.8) 100%),
+        url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2200&q=85')
+        center/cover no-repeat;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 9rem 6% 6rem;
     }
-    .hero-eyebrow {
-      font-size: 0.78rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 1.2rem;
+    .hero-oak {
+      width: 52px; height: 52px;
+      margin-bottom: 1.8rem;
+      opacity: 0.85;
     }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.2;
-      max-width: 800px;
-      margin-bottom: 1.5rem;
+      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+      font-weight: 300; color: var(--white);
+      line-height: 1.15; max-width: 760px;
+      margin-bottom: 1.6rem;
+      letter-spacing: 0.01em;
     }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
+    .hero h1 em { font-style: italic; color: var(--gold-lt); }
     .hero p {
-      color: rgba(255,255,255,0.75);
-      font-size: 1.05rem;
-      max-width: 560px;
-      margin-bottom: 2.5rem;
-      font-weight: 300;
+      color: rgba(245,240,232,0.72);
+      font-size: 1.05rem; max-width: 520px;
+      margin-bottom: 2.8rem; font-weight: 300;
     }
     .btn {
-      display: inline-block;
-      padding: 0.9rem 2.2rem;
-      border: 1.5px solid var(--gold);
-      color: var(--gold-light);
-      text-decoration: none;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      transition: background 0.25s, color 0.25s;
+      display: inline-block; padding: 0.9rem 2.4rem;
+      border: 1px solid var(--gold);
+      color: var(--gold-lt); text-decoration: none;
+      font-size: 0.78rem; letter-spacing: 0.14em;
+      text-transform: uppercase; transition: all 0.25s;
+      font-family: 'Inter', sans-serif;
     }
-    .btn:hover { background: var(--gold); color: var(--white); }
-    .btn-solid {
-      background: var(--gold);
-      color: var(--white);
-      border-color: var(--gold);
-    }
-    .btn-solid:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn:hover { background: var(--gold); color: var(--forest); }
+    .btn-solid { background: var(--gold); color: var(--forest); border-color: var(--gold); font-weight: 500; }
+    .btn-solid:hover { background: var(--gold-lt); border-color: var(--gold-lt); }
 
-    /* ── SECTION BASE ────────────────────────────────────── */
-    section { padding: 6rem 5%; }
+    /* ── SECTION BASE ── */
+    section { padding: 6rem 6%; }
     .section-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.8rem;
+      font-size: 0.7rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.6rem;
+    }
+    .section-label::before {
+      content: ''; display: block;
+      width: 24px; height: 1px; background: var(--gold);
     }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 400;
-      color: var(--navy);
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
+      font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+      font-weight: 400; line-height: 1.2;
+      margin-bottom: 1.4rem;
     }
-    .section-title.light { color: var(--white); }
-    .divider {
-      width: 48px;
-      height: 2px;
-      background: var(--gold);
-      margin-bottom: 2rem;
-    }
+    .section-title.light { color: var(--cream); }
+    .divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 2rem; }
 
-    /* ── ABOUT ───────────────────────────────────────────── */
+    /* ── ABOUT ── */
     #about {
       background: var(--cream);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: center;
     }
+    .about-img-wrap { position: relative; }
     .about-img {
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
-      object-position: center 20%;
+      width: 100%; height: 560px;
+      object-fit: cover; object-position: center 30%;
+      display: block;
+    }
+    .about-img-accent {
+      position: absolute; bottom: -1.5rem; left: -1.5rem;
+      width: 120px; height: 120px;
+      background: var(--forest); opacity: 0.08;
+      z-index: 0;
     }
     .about-text p {
-      color: #4b5563;
-      margin-bottom: 1.2rem;
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 1.8;
+      color: var(--gray); margin-bottom: 1.3rem;
+      font-size: 1rem; font-weight: 300; line-height: 1.85;
     }
+    .about-text p strong { color: var(--forest); font-weight: 500; }
 
-    /* ── CRITERIA ────────────────────────────────────────── */
-    #criteria { background: var(--navy); }
-    #criteria .section-label { color: var(--gold-light); }
-    .criteria-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+    /* ── PRINCIPLES ── */
+    #principles {
+      background: var(--forest);
+      position: relative; overflow: hidden;
     }
-    .criteria-card {
-      border: 1px solid rgba(184,146,58,0.25);
-      padding: 2rem;
-      position: relative;
-    }
-    .criteria-card::before {
+    #principles::before {
       content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px;
-      height: 100%;
-      background: var(--gold);
+      position: absolute; top: 0; right: 0;
+      width: 400px; height: 100%;
+      background: url('https://images.unsplash.com/photo-1518623489648-a173ef7824f3?auto=format&fit=crop&w=800&q=60')
+        center/cover no-repeat;
+      opacity: 0.08;
     }
-    .criteria-card h3 {
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 3rem;
+      position: relative; z-index: 1;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+    .principle {
+      padding: 2.5rem;
+      border-right: 1px solid rgba(201,168,76,0.2);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+    .principle:nth-child(3n) { border-right: none; }
+    .principle:nth-child(4), .principle:nth-child(5), .principle:nth-child(6) { border-bottom: none; }
+    .principle-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      color: var(--white);
+      font-size: 2.4rem; color: var(--gold); opacity: 0.3;
+      line-height: 1; margin-bottom: 0.8rem;
+    }
+    .principle h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; color: var(--cream);
       margin-bottom: 0.6rem;
     }
-    .criteria-card p {
-      color: rgba(255,255,255,0.55);
-      font-size: 0.9rem;
-      font-weight: 300;
-      line-height: 1.6;
-    }
-    .criteria-number {
-      font-size: 2rem;
-      font-family: 'Cormorant Garamond', serif;
-      color: var(--gold);
-      opacity: 0.4;
-      position: absolute;
-      top: 1rem;
-      right: 1.2rem;
+    .principle p {
+      color: rgba(245,240,232,0.5);
+      font-size: 0.88rem; font-weight: 300; line-height: 1.65;
     }
 
-    /* ── WHY US ──────────────────────────────────────────── */
+    /* ── WHY ── */
     #why {
-      background: var(--light-gray);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
+      background: var(--cream-dk);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: center;
     }
     .why-img {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
+      width: 100%; height: 500px;
+      object-fit: cover; object-position: center;
     }
     .why-list { list-style: none; margin-top: 1rem; }
-    .why-list li {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
+    .why-list li { display: flex; gap: 1.2rem; margin-bottom: 2rem; }
     .why-icon {
-      width: 36px;
-      height: 36px;
-      min-width: 36px;
-      background: var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 0.1rem;
+      width: 34px; height: 34px; min-width: 34px;
+      border: 1px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 0.15rem;
     }
-    .why-icon svg { width: 16px; height: 16px; fill: white; }
-    .why-list h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 0.3rem;
-    }
-    .why-list p {
-      font-size: 0.88rem;
-      color: var(--gray);
-      font-weight: 300;
-      line-height: 1.6;
-    }
+    .why-icon svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .why-list h4 { font-size: 0.92rem; font-weight: 500; color: var(--forest); margin-bottom: 0.25rem; }
+    .why-list p { font-size: 0.87rem; color: var(--gray); font-weight: 300; line-height: 1.65; }
 
-    /* ── TEAM ────────────────────────────────────────────── */
-    #team { background: var(--white); }
-    .team-grid {
-      display: flex;
-      gap: 3rem;
+    /* ── TEAM ── */
+    #team { background: var(--cream); }
+    .team-flex {
+      display: flex; gap: 4rem; flex-wrap: wrap;
       margin-top: 3rem;
-      flex-wrap: wrap;
     }
-    .team-card {
-      width: 320px;
-    }
+    .team-card { width: 300px; }
     .team-photo {
-      width: 320px;
-      height: 400px;
-      object-fit: cover;
-      object-position: center 15%;
-      filter: grayscale(15%);
-      margin-bottom: 1.2rem;
-      display: block;
+      width: 300px; height: 380px;
+      object-fit: cover; object-position: center 15%;
+      filter: grayscale(20%) contrast(1.02);
+      margin-bottom: 1.3rem; display: block;
     }
     .team-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      color: var(--navy);
-      margin-bottom: 0.2rem;
+      font-size: 1.5rem; color: var(--forest); margin-bottom: 0.2rem;
     }
     .team-role {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
+      font-size: 0.72rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gold);
       margin-bottom: 1rem;
     }
     .team-bio {
-      font-size: 0.88rem;
-      color: var(--gray);
-      font-weight: 300;
-      line-height: 1.7;
+      font-size: 0.87rem; color: var(--gray);
+      font-weight: 300; line-height: 1.75;
     }
-    .team-linkedin {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-top: 0.8rem;
-      font-size: 0.78rem;
-      color: var(--gold);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      border-bottom: 1px solid transparent;
+    .team-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      margin-top: 0.9rem; font-size: 0.75rem;
+      color: var(--forest-light); text-decoration: none;
+      letter-spacing: 0.06em; border-bottom: 1px solid transparent;
       transition: border-color 0.2s;
     }
-    .team-linkedin:hover { border-color: var(--gold); }
+    .team-link:hover { border-color: var(--gold); color: var(--gold); }
 
-    /* Advisor section */
-    .advisor-section {
-      margin-top: 5rem;
-      padding-top: 4rem;
-      border-top: 1px solid #e5e7eb;
-    }
-    .advisor-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 2rem;
+    .advisor-wrap {
+      margin-top: 5rem; padding-top: 4rem;
+      border-top: 1px solid rgba(139,115,85,0.25);
     }
     .advisor-card {
-      display: flex;
-      gap: 2.5rem;
-      align-items: flex-start;
-      max-width: 760px;
+      display: flex; gap: 2.5rem; align-items: flex-start;
+      max-width: 680px; margin-top: 2rem;
     }
     .advisor-photo {
-      width: 140px;
-      height: 140px;
-      min-width: 140px;
-      object-fit: cover;
-      object-position: 55% 30%;
-      border-radius: 50%;
-      filter: grayscale(15%);
+      width: 130px; height: 130px; min-width: 130px;
+      object-fit: cover; border-radius: 50%;
+      filter: grayscale(20%);
     }
     .advisor-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      color: var(--navy);
-      margin-bottom: 0.2rem;
+      font-size: 1.3rem; color: var(--forest); margin-bottom: 0.2rem;
     }
     .advisor-title {
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.8rem;
+      font-size: 0.72rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem;
     }
     .advisor-bio {
-      font-size: 0.88rem;
-      color: var(--gray);
-      font-weight: 300;
-      line-height: 1.7;
+      font-size: 0.87rem; color: var(--gray);
+      font-weight: 300; line-height: 1.75;
     }
 
-    /* ── CONTACT ─────────────────────────────────────────── */
+    /* ── CONTACT ── */
     #contact {
-      background: var(--navy);
-      text-align: center;
+      background: var(--forest);
+      text-align: center; position: relative; overflow: hidden;
     }
-    #contact .section-label { color: var(--gold-light); }
+    #contact::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1800&q=40') center/cover;
+      opacity: 0.06;
+    }
+    #contact > * { position: relative; z-index: 1; }
     #contact p {
-      color: rgba(255,255,255,0.6);
-      max-width: 480px;
-      margin: 0 auto 2rem;
+      color: rgba(245,240,232,0.55);
+      max-width: 440px; margin: 0 auto 2rem;
       font-weight: 300;
     }
     .contact-form {
-      max-width: 540px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      max-width: 500px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 1rem;
     }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: var(--white);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      outline: none;
-      transition: border-color 0.2s;
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 0.9rem 1.1rem;
+      background: rgba(245,240,232,0.06);
+      border: 1px solid rgba(245,240,232,0.15);
+      color: var(--cream); font-family: 'Inter', sans-serif;
+      font-size: 0.88rem; outline: none; transition: border-color 0.2s;
     }
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder { color: rgba(255,255,255,0.35); }
-    .contact-form input:focus,
-    .contact-form textarea:focus { border-color: var(--gold); }
-    .contact-form textarea { height: 120px; resize: vertical; }
+    .contact-form input::placeholder, .contact-form textarea::placeholder {
+      color: rgba(245,240,232,0.3);
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: var(--gold);
+    }
+    .contact-form textarea { height: 110px; resize: vertical; }
 
-    /* ── FOOTER ──────────────────────────────────────────── */
+    /* ── FOOTER ── */
     footer {
-      background: #070f1a;
-      padding: 2rem 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      background: #0e180f; padding: 2rem 6%;
+      display: flex; align-items: center; justify-content: space-between;
     }
-    .footer-logo {
+    .footer-brand {
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .footer-brand svg { width: 22px; height: 22px; opacity: 0.5; }
+    .footer-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      color: rgba(255,255,255,0.5);
+      font-size: 0.95rem; color: rgba(245,240,232,0.4);
+      letter-spacing: 0.1em;
     }
-    .footer-logo span { color: var(--gold); }
-    footer p {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.3);
-    }
+    .footer-name span { color: var(--gold); opacity: 0.7; }
+    footer p { font-size: 0.75rem; color: rgba(245,240,232,0.25); }
 
-    /* ── RESPONSIVE ──────────────────────────────────────── */
-    @media (max-width: 768px) {
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
       #about, #why { grid-template-columns: 1fr; gap: 2.5rem; }
-      .about-img, .why-img { height: 300px; }
-      .form-row { grid-template-columns: 1fr; }
+      .about-img, .why-img { height: 320px; }
+      .principles-grid { grid-template-columns: 1fr; }
+      .principle { border-right: none; }
       nav ul { display: none; }
       .advisor-card { flex-direction: column; }
-      .team-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">EVEROAK <span>HOLDINGS</span></a>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#criteria">Criteria</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- OAK TREE SVG (reused inline) -->
+<svg style="display:none">
+  <symbol id="oak" viewBox="0 0 64 64" fill="none">
+    <path d="M32 56V32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M32 42 Q20 36 18 24 Q26 20 32 28 Q38 20 46 24 Q44 36 32 42Z" fill="currentColor" opacity="0.85"/>
+    <path d="M32 34 Q14 30 12 14 Q22 8 32 20 Q42 8 52 14 Q50 30 32 34Z" fill="currentColor"/>
+    <path d="M32 48 Q22 44 24 56H40Q42 44 32 48Z" fill="currentColor" opacity="0.5"/>
+  </symbol>
+</svg>
 
-  <!-- HERO -->
-  <section class="hero">
-    
-    <h1>A Permanent Home<br/>for <em>Enduring Businesses</em></h1>
-    <p>We acquire, operate, and grow a single exceptional business in the US - preserving your legacy while building long-term value for all stakeholders.</p>
-    <a href="#contact" class="btn">Start a Conversation</a>
-  </section>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 64 64" fill="none">
+      <use href="#oak" color="rgba(201,168,76,0.8)"/>
+    </svg>
+    EVEROAK HOLDINGS
+  </a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#principles">Criteria</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- ABOUT -->
-  <section id="about">
+<!-- HERO -->
+<section class="hero">
+  <svg class="hero-oak" viewBox="0 0 64 64" fill="none">
+    <use href="#oak" color="rgba(201,168,76,0.75)"/>
+  </svg>
+  <h1>A Permanent Home<br/>for <em>Enduring Businesses</em></h1>
+  <p>We acquire businesses to own them forever. No funds, no exit timelines, no next buyer. Just patient, committed stewardship of what you spent a lifetime building.</p>
+  <a href="#contact" class="btn">Start a Conversation</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-img-wrap">
     <img
       class="about-img"
-      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80"
-      alt="Business meeting"
+      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80"
+      alt="Long-term ownership"
     />
-    <div class="about-text">
-      <p class="section-label">Our Philosophy</p>
-      <h2 class="section-title">Ownership Without an End Date</h2>
-      <div class="divider"></div>
-      <p>Most buyers have a fund life, an investor return target, and a clock ticking toward their next sale. We do not. Everoak Holdings is a permanent capital holding company. When we acquire a business, we intend to own it indefinitely.</p>
-      <p>That changes everything about how we operate. We make decisions for decade-long time horizons, not quarterly earnings calls. We invest in people, systems, and culture because we will be living with those decisions for a very long time.</p>
-      <p>For business owners thinking about succession, this matters. Your employees will not face a new owner every five years. Your customers will not notice a thing. Your legacy does not get flipped. It gets carried forward.</p>
-      <a href="#criteria" class="btn btn-solid" style="margin-top: 1rem;">Is This a Fit?</a>
-    </div>
-  </section>
+    <div class="about-img-accent"></div>
+  </div>
+  <div class="about-text">
+    <p class="section-label">Our Philosophy</p>
+    <h2 class="section-title">Ownership Without an End Date</h2>
+    <div class="divider"></div>
+    <p>Most buyers have a fund life, an investor return target, and a clock ticking toward their next sale. <strong>We do not.</strong> Everoak Holdings is a permanent capital holding company. When we acquire a business, we intend to own it indefinitely.</p>
+    <p>That changes everything about how we operate. We make decisions for decade-long time horizons, not quarterly earnings calls. We invest in people, systems, and culture because we will be living with those decisions for a very long time.</p>
+    <p>For business owners thinking about succession, this matters. Your employees will not face a new owner every five years. Your customers will not notice a thing. Your legacy does not get flipped. It gets carried forward.</p>
+    <a href="#principles" class="btn btn-solid" style="margin-top:1rem;">Is This a Fit?</a>
+  </div>
+</section>
 
-  <!-- CRITERIA -->
-  <section id="criteria">
-    <div class="section-label">What We Look For</div>
+<!-- PRINCIPLES / CRITERIA -->
+<section id="principles">
+  <div style="position:relative;z-index:1">
+    <div class="section-label" style="color:var(--gold-lt)">What We Look For</div>
     <h2 class="section-title light">Acquisition Criteria</h2>
-    <div class="divider"></div>
-    <div class="criteria-grid">
-      <div class="criteria-card">
-        <span class="criteria-number">01</span>
-        <h3>Essential Services</h3>
-        <p>Businesses providing non-discretionary services with consistent demand regardless of economic cycles.</p>
-      </div>
-      <div class="criteria-card">
-        <span class="criteria-number">02</span>
-        <h3>Recurring Revenue</h3>
-        <p>Contracts, maintenance agreements, or natural repeat purchase cycles that create predictable cash flow.</p>
-      </div>
-      <div class="criteria-card">
-        <span class="criteria-number">03</span>
-        <h3>EBITDA $400K–$2M</h3>
-        <p>Profitable businesses in our target size range with clean financials and strong cash flow fundamentals.</p>
-      </div>
-      <div class="criteria-card">
-        <span class="criteria-number">04</span>
-        <h3>Target Geographies</h3>
-        <p>Major US metro areas including Los Angeles, Dallas, Houston, New York, Atlanta, Chicago, and more.</p>
-      </div>
-      <div class="criteria-card">
-        <span class="criteria-number">05</span>
-        <h3>Owner Transition</h3>
-        <p>Owners considering retirement or new pursuits who want a trustworthy successor to carry their legacy forward.</p>
-      </div>
-      <div class="criteria-card">
-        <span class="criteria-number">06</span>
-        <h3>Established Operations</h3>
-        <p>10+ years in business with proven processes, loyal customers, and a team capable of operating independently.</p>
-      </div>
+    <div class="divider" style="background:var(--gold)"></div>
+  </div>
+  <div class="principles-grid">
+    <div class="principle">
+      <div class="principle-num">01</div>
+      <h3>Essential Services</h3>
+      <p>Non-discretionary services with consistent demand regardless of economic conditions.</p>
     </div>
-  </section>
-
-  <!-- WHY US -->
-  <section id="why">
-    <img
-      class="why-img"
-      src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80"
-      alt="Team collaboration"
-    />
-    <div>
-      <p class="section-label">How We Are Different</p>
-      <h2 class="section-title">Built for the<br/>Long Run</h2>
-      <div class="divider"></div>
-      <ul class="why-list">
-        <li>
-          <div class="why-icon">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <div>
-            <h4>Long-Term Commitment</h4>
-            <p>We operate with a 10+ year horizon - we're not a private equity fund optimizing for a quick exit.</p>
-          </div>
-        </li>
-        <li>
-          <div class="why-icon">
-            <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          </div>
-          <div>
-            <h4>Operator-Led</h4>
-            <p>We are operators first. Our team rolls up its sleeves and works alongside your people from day one.</p>
-          </div>
-        </li>
-        <li>
-          <div class="why-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-          </div>
-          <div>
-            <h4>Confidential Process</h4>
-            <p>We treat every conversation with the utmost discretion - your employees, customers, and competitors won't know until you decide.</p>
-          </div>
-        </li>
-        <li>
-          <div class="why-icon">
-            <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          </div>
-          <div>
-            <h4>Flexible Structuring</h4>
-            <p>Seller financing, equity rollovers, earnouts - we structure deals to work for you, not just for us.</p>
-          </div>
-        </li>
-      </ul>
+    <div class="principle">
+      <div class="principle-num">02</div>
+      <h3>Recurring Revenue</h3>
+      <p>Contracts, maintenance agreements, or natural repeat cycles that create predictable cash flow.</p>
     </div>
-  </section>
+    <div class="principle">
+      <div class="principle-num">03</div>
+      <h3>EBITDA $400K to $2M</h3>
+      <p>Profitable businesses in our target range with clean financials and strong fundamentals.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">04</div>
+      <h3>Strong Team in Place</h3>
+      <p>Operations that can run independently of the owner, with managers ready to grow.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">05</div>
+      <h3>Owner Transition</h3>
+      <p>Founders considering retirement or their next chapter who want a trustworthy successor.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">06</div>
+      <h3>10+ Years in Business</h3>
+      <p>Proven through multiple cycles, with loyal customers and an established market position.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- TEAM -->
-  <section id="team">
-    <p class="section-label">Who We Are</p>
-    <h2 class="section-title">Our Team</h2>
+<!-- WHY -->
+<section id="why">
+  <img
+    class="why-img"
+    src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80"
+    alt="Deep roots"
+  />
+  <div>
+    <p class="section-label">How We Are Different</p>
+    <h2 class="section-title">Built for<br/>the Long Run</h2>
     <div class="divider"></div>
+    <ul class="why-list">
+      <li>
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L12 22M5 8 Q12 2 19 8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h4>No Exit Timeline</h4>
+          <p>We have no fund life, no LP to return capital to, and no pressure to sell. We buy to hold, indefinitely.</p>
+        </div>
+      </li>
+      <li>
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h4>Operator-Led</h4>
+          <p>We are operators, not financial engineers. We work inside the business, alongside your team, from day one.</p>
+        </div>
+      </li>
+      <li>
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h4>Confidential Process</h4>
+          <p>We treat every conversation with the utmost discretion. Employees, customers, and competitors will not know until you decide.</p>
+        </div>
+      </li>
+      <li>
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h4>Flexible Structuring</h4>
+          <p>Seller financing, equity rollovers, earnouts. We structure deals to work for you, not just for us.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
 
-    <div class="team-grid">
-      <div class="team-card">
-        <img
-          class="team-photo"
-          src="https://images.squarespace-cdn.com/content/v1/6493807296afad414513684a/bec32955-7641-405a-b4d4-73d3c9f97866/george+lang+Capturely_Headshot-retouched.jpg"
-          alt="George Lang"
-        />
-        <div class="team-name">George Lang</div>
-        <div class="team-role">Managing Partner</div>
-        <p class="team-bio">George, born and raised in Arlington, Virginia, is a resilient entrepreneur with a diverse background spanning government technology, international software development, and private equity. After gaining experience in sales and consulting, he joined a government tech firm where he built expertise in data analytics, working with organizations like Deloitte, the US Mint, Health and Human Services, the US Army, and the Navy.</p>
-        <p class="team-bio" style="margin-top: 0.8rem;">George subsequently led teams building proprietary operating systems for companies like Grab (Singapore), Coupang (Korea), and Zinier (US/Singapore). Outside of business, he is an avid investor, real estate enthusiast, and volunteer focused on helping individuals achieve homeownership.</p>
-        <a href="https://www.linkedin.com/in/georgelang/" target="_blank" class="team-linkedin">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn Profile
+<!-- TEAM -->
+<section id="team">
+  <p class="section-label">Who We Are</p>
+  <h2 class="section-title">Our Team</h2>
+  <div class="divider"></div>
+
+  <div class="team-flex">
+    <div class="team-card">
+      <img
+        class="team-photo"
+        src="https://images.squarespace-cdn.com/content/v1/6493807296afad414513684a/bec32955-7641-405a-b4d4-73d3c9f97866/george+lang+Capturely_Headshot-retouched.jpg"
+        alt="George Lang"
+      />
+      <div class="team-name">George Lang</div>
+      <div class="team-role">Managing Partner</div>
+      <p class="team-bio">George is a resilient entrepreneur with a background spanning government technology, international software development, and private equity. He built expertise in data analytics working with organizations like Deloitte, the US Mint, and the US Army before leading teams building proprietary operating systems for companies like Grab, Coupang, and Zinier across Southeast Asia and Korea.</p>
+      <a href="https://www.linkedin.com/in/georgelang/" target="_blank" class="team-link">
+        LinkedIn &rarr;
+      </a>
+    </div>
+  </div>
+
+  <div class="advisor-wrap">
+    <div class="section-label">Advisory Board</div>
+    <div class="advisor-card">
+      <img class="advisor-photo" src="data:image/jpeg;base64,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" style="object-position:55% 30%" alt="Kent Weaver" />
+      <div>
+        <div class="advisor-name">Kent Weaver</div>
+        <div class="advisor-title">Advisor · Founder, Granite Point Partners</div>
+        <p class="advisor-bio">Kent Weaver is the founder of Granite Point Partners, a Santa Barbara-based firm partnering with exceptional entrepreneurs to build great businesses. With decades of experience in lower middle market acquisitions and operations, Kent brings deep expertise in deal structuring, value creation, and building enduring companies. He provides guidance to Everoak on acquisition strategy, operator development, and long-term stewardship.</p>
+        <a href="https://www.granitepointpartners.com/" target="_blank" class="team-link">
+          Granite Point Partners &rarr;
         </a>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- ADVISOR -->
-    <div class="advisor-section">
-      <div class="advisor-label">Advisory Board</div>
-      <div class="advisor-card">
-        <img
-          class="advisor-photo"
-          src="data:image/jpeg;base64,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"
-          alt="Kent Weaver"
-        />
-        <div>
-          <div class="advisor-name">Kent Weaver</div>
-          <div class="advisor-title">Advisor · Founder, Granite Point Partners</div>
-          <p class="advisor-bio">Kent Weaver is the founder of Granite Point Partners, a Santa Barbara-based investment firm partnering with exceptional entrepreneurs to build great businesses. With decades of experience in lower middle market acquisitions and operations, Kent brings deep expertise in deal structuring, value creation, and building enduring businesses. He serves as a trusted advisor to Everoak Holdings, providing guidance on acquisition strategy, operator development, and long-term value creation.</p>
-          <a href="https://www.granitepointpartners.com/" target="_blank" class="team-linkedin" style="margin-top: 0.6rem;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-            Granite Point Partners
-          </a>
-        </div>
-      </div>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label" style="justify-content:center;color:var(--gold-lt)">Get In Touch</div>
+  <h2 class="section-title light" style="text-align:center">Start a Conversation</h2>
+  <div class="divider" style="margin:0 auto 1.5rem;"></div>
+  <p>If you have built something worth keeping, we would like to talk. We are discreet, straightforward, and genuinely long-term in our thinking.</p>
+  <form class="contact-form" onsubmit="return false;">
+    <div class="form-row">
+      <input type="text" placeholder="Your Name" />
+      <input type="email" placeholder="Email Address" />
     </div>
-  </section>
+    <input type="text" placeholder="Company Name" />
+    <input type="text" placeholder="Industry / Business Type" />
+    <textarea placeholder="Tell us about your business or inquiry..."></textarea>
+    <button type="submit" class="btn btn-solid" style="cursor:pointer;font-family:inherit;">Send Message</button>
+  </form>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-label">Get In Touch</div>
-    <h2 class="section-title light">Start a Conversation</h2>
-    <div class="divider" style="margin: 0 auto 1.5rem;"></div>
-    <p>Whether you're exploring a transition or simply want to learn more about our approach, we'd love to hear from you. All inquiries are kept strictly confidential.</p>
-    <form class="contact-form" onsubmit="return false;">
-      <div class="form-row">
-        <input type="text" placeholder="Your Name" />
-        <input type="email" placeholder="Email Address" />
-      </div>
-      <input type="text" placeholder="Company Name" />
-      <input type="text" placeholder="Industry / Business Type" />
-      <textarea placeholder="Tell us about your business or inquiry…"></textarea>
-      <button type="submit" class="btn btn-solid" style="cursor:pointer; font-family: inherit;">Send Message</button>
-    </form>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">EVEROAK <span>HOLDINGS</span> PARTNERS</div>
-    <p>© 2026 Everoak Holdings. All rights reserved.</p>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <svg viewBox="0 0 64 64" fill="none">
+      <use href="#oak" color="rgba(201,168,76,0.5)"/>
+    </svg>
+    <div>
+      <div class="footer-name">EVEROAK <span>HOLDINGS</span></div>
+      <div style="font-size:0.65rem;color:rgba(245,240,232,0.25);letter-spacing:0.08em;margin-top:0.15rem;">Enduring Ownership for Enduring Businesses</div>
+    </div>
+  </div>
+  <p>© 2026 Everoak Holdings. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
