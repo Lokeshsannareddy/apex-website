@@ -126,6 +126,9 @@
       object-fit: cover; object-position: center 30%;
       display: block;
     }
+    .about-img-wrap {
+      min-height: 460px;
+    }
     .about-img-accent {
       position: absolute; bottom: -1.5rem; left: -1.5rem;
       width: 120px; height: 120px;
@@ -371,13 +374,12 @@
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="about-img-wrap">
+  <div class="about-img-wrap" style="display:flex;align-items:center;justify-content:center;background:var(--cream);padding:2rem;">
     <img
-      class="about-img"
-      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80"
-      alt="Long-term ownership"
+      src="https://bristleconecompanies.com/assets/drawn_bristlecone-CDiCxgxp.png"
+      alt="Everoak tree"
+      style="width:85%;max-width:420px;height:auto;object-fit:contain;opacity:0.82;mix-blend-mode:multiply;"
     />
-    <div class="about-img-accent"></div>
   </div>
   <div class="about-text">
     <p class="section-label">Our Philosophy</p>
