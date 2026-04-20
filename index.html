@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Everoak Holdings</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -35,9 +35,9 @@
     }
     .nav-logo {
       display: flex; align-items: center; gap: 0.7rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem; font-weight: 400;
-      color: var(--cream); letter-spacing: 0.12em;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--cream); letter-spacing: 0.08em;
       text-decoration: none;
     }
     .nav-logo svg { width: 28px; height: 28px; opacity: 0.9; }
@@ -66,8 +66,9 @@
     }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 4.5vw, 4rem);
-      font-weight: 600; color: var(--forest);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 4.8vw, 4.2rem);
+      font-weight: 700; color: var(--forest);
       line-height: 1.05; max-width: 640px;
       margin-bottom: 1.8rem;
       letter-spacing: -0.02em;
@@ -102,7 +103,7 @@
       width: 24px; height: 1px; background: var(--forest);
     }
     .section-title {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(1.9rem, 3.5vw, 2.9rem);
       font-weight: 400; line-height: 1.2;
       margin-bottom: 1.4rem;
@@ -209,8 +210,8 @@
       margin-bottom: 1.3rem; display: block;
     }
     .team-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem; color: var(--forest); margin-bottom: 0.2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; color: var(--forest); margin-bottom: 0.2rem; font-weight: 600;
     }
     .team-role {
       font-size: 0.72rem; letter-spacing: 0.14em;
@@ -379,18 +380,22 @@
 <!-- OAK TREE SVG (reused inline) -->
 <svg style="display:none">
   <symbol id="oak" viewBox="0 0 64 64" fill="none">
-    <!-- Trunk -->
-    <path d="M32 60 L32 36" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-    <path d="M32 50 Q26 48 22 52" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-    <path d="M32 46 Q38 44 41 48" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-    <!-- Canopy - layered rounded mass -->
-    <ellipse cx="32" cy="28" rx="18" ry="14" fill="currentColor"/>
-    <ellipse cx="22" cy="22" rx="12" ry="10" fill="currentColor"/>
-    <ellipse cx="42" cy="22" rx="12" ry="10" fill="currentColor"/>
-    <ellipse cx="32" cy="16" rx="14" ry="11" fill="currentColor"/>
-    <!-- Highlight notches for realism -->
-    <ellipse cx="26" cy="30" rx="5" ry="4" fill="currentColor" opacity="0.6"/>
-    <ellipse cx="38" cy="28" rx="5" ry="4" fill="currentColor" opacity="0.55"/>
+    <!-- Trunk & roots -->
+    <path d="M32 62 L32 38" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    <path d="M32 58 Q24 55 20 60" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+    <path d="M32 58 Q40 55 44 60" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+    <!-- Main branches -->
+    <path d="M32 42 Q18 36 12 26" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <path d="M32 42 Q46 36 52 26" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <path d="M32 38 Q22 32 18 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    <path d="M32 38 Q42 32 46 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    <!-- Canopy masses -->
+    <circle cx="32" cy="20" r="14" fill="currentColor"/>
+    <circle cx="18" cy="26" r="10" fill="currentColor"/>
+    <circle cx="46" cy="26" r="10" fill="currentColor"/>
+    <circle cx="24" cy="16" r="9" fill="currentColor"/>
+    <circle cx="40" cy="16" r="9" fill="currentColor"/>
+    <circle cx="32" cy="10" r="8" fill="currentColor"/>
   </symbol>
 </svg>
 
@@ -415,7 +420,7 @@
   <svg class="hero-oak" viewBox="0 0 64 64" fill="none">
     <use href="#oak" color="rgba(201,168,76,0.75)"/>
   </svg>
-  <h1>Built to Last.<br/>A Permanent Home<br/>for Enduring Businesses.</h1>
+  <h1>A Permanent Home<br/>for Enduring Businesses.</h1>
   <p>No fund life. No exit timeline. No next buyer. We acquire exceptional businesses and hold them forever.</p>
   <a href="#contact" class="btn">Start a Conversation</a>
 </section>
@@ -423,46 +428,11 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="about-img-wrap" style="display:flex;align-items:center;justify-content:center;background:var(--cream);padding:2rem;">
-    <svg viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg"
-      style="width:85%;max-width:480px;height:auto;opacity:0.75;">
-      <!-- Ground line -->
-      <line x1="60" y1="370" x2="240" y2="370" stroke="#3d6142" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-      <!-- Main trunk -->
-      <path d="M150 370 L150 240" stroke="#2d4a30" stroke-width="12" stroke-linecap="round"/>
-      <!-- Trunk texture -->
-      <path d="M147 340 Q144 330 147 320" stroke="#1c2e1e" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-      <path d="M153 350 Q156 338 153 325" stroke="#1c2e1e" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
-      <!-- Main branches -->
-      <path d="M150 280 Q118 260 95 245" stroke="#2d4a30" stroke-width="6" stroke-linecap="round"/>
-      <path d="M150 270 Q182 250 205 238" stroke="#2d4a30" stroke-width="6" stroke-linecap="round"/>
-      <path d="M150 295 Q125 285 108 275" stroke="#2d4a30" stroke-width="4" stroke-linecap="round"/>
-      <path d="M150 288 Q172 278 188 268" stroke="#2d4a30" stroke-width="4" stroke-linecap="round"/>
-      <!-- Sub branches -->
-      <path d="M95 245 Q78 232 68 218" stroke="#3d6142" stroke-width="3" stroke-linecap="round"/>
-      <path d="M95 245 Q88 228 92 212" stroke="#3d6142" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M205 238 Q220 224 230 210" stroke="#3d6142" stroke-width="3" stroke-linecap="round"/>
-      <path d="M205 238 Q212 220 208 204" stroke="#3d6142" stroke-width="2.5" stroke-linecap="round"/>
-      <!-- Foliage masses - layered ellipses for oak canopy -->
-      <ellipse cx="150" cy="160" rx="88" ry="70" fill="#2d4a30"/>
-      <ellipse cx="105" cy="175" rx="62" ry="52" fill="#3d6142"/>
-      <ellipse cx="195" cy="172" rx="60" ry="50" fill="#3d6142"/>
-      <ellipse cx="150" cy="130" rx="72" ry="55" fill="#3d6142"/>
-      <ellipse cx="120" cy="140" rx="50" ry="42" fill="#2d4a30" opacity="0.7"/>
-      <ellipse cx="180" cy="138" rx="50" ry="40" fill="#2d4a30" opacity="0.7"/>
-      <ellipse cx="150" cy="105" rx="58" ry="44" fill="#3d6142"/>
-      <ellipse cx="150" cy="85" rx="44" ry="34" fill="#2d4a30"/>
-      <!-- Lighter highlight clusters -->
-      <ellipse cx="125" cy="120" rx="28" ry="22" fill="#4a7350" opacity="0.5"/>
-      <ellipse cx="175" cy="115" rx="26" ry="20" fill="#4a7350" opacity="0.45"/>
-      <ellipse cx="150" cy="95" rx="22" ry="18" fill="#4a7350" opacity="0.5"/>
-      <ellipse cx="100" cy="160" rx="22" ry="18" fill="#4a7350" opacity="0.4"/>
-      <ellipse cx="200" cy="158" rx="20" ry="16" fill="#4a7350" opacity="0.4"/>
-      <!-- Root flares -->
-      <path d="M150 370 Q135 365 118 372" stroke="#2d4a30" stroke-width="5" stroke-linecap="round"/>
-      <path d="M150 370 Q165 364 182 371" stroke="#2d4a30" stroke-width="5" stroke-linecap="round"/>
-      <path d="M150 370 Q140 360 128 368" stroke="#2d4a30" stroke-width="3.5" stroke-linecap="round" opacity="0.6"/>
-      <path d="M150 370 Q160 360 172 367" stroke="#2d4a30" stroke-width="3.5" stroke-linecap="round" opacity="0.6"/>
-    </svg>
+    <img
+      src="./oak-tree.jpg"
+      alt="Everoak oak tree illustration"
+      style="width:100%;max-width:560px;height:auto;mix-blend-mode:multiply;opacity:0.88;"
+    />
   </div>
   <div class="about-text reveal">
     <p class="section-label">Our Philosophy</p>
