@@ -66,11 +66,11 @@
     }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 5vw, 4.6rem);
-      font-weight: 300; color: var(--forest);
-      line-height: 1.1; max-width: 680px;
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      font-weight: 600; color: var(--forest);
+      line-height: 1.05; max-width: 640px;
       margin-bottom: 1.8rem;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
     }
     .hero h1 em { font-style: italic; color: var(--forest-light); }
     .hero p {
@@ -379,10 +379,18 @@
 <!-- OAK TREE SVG (reused inline) -->
 <svg style="display:none">
   <symbol id="oak" viewBox="0 0 64 64" fill="none">
-    <path d="M32 56V32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M32 42 Q20 36 18 24 Q26 20 32 28 Q38 20 46 24 Q44 36 32 42Z" fill="currentColor" opacity="0.85"/>
-    <path d="M32 34 Q14 30 12 14 Q22 8 32 20 Q42 8 52 14 Q50 30 32 34Z" fill="currentColor"/>
-    <path d="M32 48 Q22 44 24 56H40Q42 44 32 48Z" fill="currentColor" opacity="0.5"/>
+    <!-- Trunk -->
+    <path d="M32 60 L32 36" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <path d="M32 50 Q26 48 22 52" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <path d="M32 46 Q38 44 41 48" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <!-- Canopy - layered rounded mass -->
+    <ellipse cx="32" cy="28" rx="18" ry="14" fill="currentColor"/>
+    <ellipse cx="22" cy="22" rx="12" ry="10" fill="currentColor"/>
+    <ellipse cx="42" cy="22" rx="12" ry="10" fill="currentColor"/>
+    <ellipse cx="32" cy="16" rx="14" ry="11" fill="currentColor"/>
+    <!-- Highlight notches for realism -->
+    <ellipse cx="26" cy="30" rx="5" ry="4" fill="currentColor" opacity="0.6"/>
+    <ellipse cx="38" cy="28" rx="5" ry="4" fill="currentColor" opacity="0.55"/>
   </symbol>
 </svg>
 
@@ -407,19 +415,54 @@
   <svg class="hero-oak" viewBox="0 0 64 64" fill="none">
     <use href="#oak" color="rgba(201,168,76,0.75)"/>
   </svg>
-  <h1>A Permanent Home<br/>for <em>Enduring Businesses</em></h1>
-  <p>We acquire businesses to own them forever. No funds, no exit timelines, no next buyer. Just patient, committed stewardship of what you spent a lifetime building.</p>
+  <h1>Built to Last.<br/>A Permanent Home<br/>for Enduring Businesses.</h1>
+  <p>No fund life. No exit timeline. No next buyer. We acquire exceptional businesses and hold them forever.</p>
   <a href="#contact" class="btn">Start a Conversation</a>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
   <div class="about-img-wrap" style="display:flex;align-items:center;justify-content:center;background:var(--cream);padding:2rem;">
-    <img
-      src="https://bristleconecompanies.com/assets/drawn_bristlecone-CDiCxgxp.png"
-      alt="Everoak tree"
-      style="width:100%;max-width:520px;height:auto;object-fit:contain;opacity:0.82;mix-blend-mode:multiply;"
-    />
+    <svg viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg"
+      style="width:85%;max-width:480px;height:auto;opacity:0.75;">
+      <!-- Ground line -->
+      <line x1="60" y1="370" x2="240" y2="370" stroke="#3d6142" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      <!-- Main trunk -->
+      <path d="M150 370 L150 240" stroke="#2d4a30" stroke-width="12" stroke-linecap="round"/>
+      <!-- Trunk texture -->
+      <path d="M147 340 Q144 330 147 320" stroke="#1c2e1e" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      <path d="M153 350 Q156 338 153 325" stroke="#1c2e1e" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+      <!-- Main branches -->
+      <path d="M150 280 Q118 260 95 245" stroke="#2d4a30" stroke-width="6" stroke-linecap="round"/>
+      <path d="M150 270 Q182 250 205 238" stroke="#2d4a30" stroke-width="6" stroke-linecap="round"/>
+      <path d="M150 295 Q125 285 108 275" stroke="#2d4a30" stroke-width="4" stroke-linecap="round"/>
+      <path d="M150 288 Q172 278 188 268" stroke="#2d4a30" stroke-width="4" stroke-linecap="round"/>
+      <!-- Sub branches -->
+      <path d="M95 245 Q78 232 68 218" stroke="#3d6142" stroke-width="3" stroke-linecap="round"/>
+      <path d="M95 245 Q88 228 92 212" stroke="#3d6142" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M205 238 Q220 224 230 210" stroke="#3d6142" stroke-width="3" stroke-linecap="round"/>
+      <path d="M205 238 Q212 220 208 204" stroke="#3d6142" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Foliage masses - layered ellipses for oak canopy -->
+      <ellipse cx="150" cy="160" rx="88" ry="70" fill="#2d4a30"/>
+      <ellipse cx="105" cy="175" rx="62" ry="52" fill="#3d6142"/>
+      <ellipse cx="195" cy="172" rx="60" ry="50" fill="#3d6142"/>
+      <ellipse cx="150" cy="130" rx="72" ry="55" fill="#3d6142"/>
+      <ellipse cx="120" cy="140" rx="50" ry="42" fill="#2d4a30" opacity="0.7"/>
+      <ellipse cx="180" cy="138" rx="50" ry="40" fill="#2d4a30" opacity="0.7"/>
+      <ellipse cx="150" cy="105" rx="58" ry="44" fill="#3d6142"/>
+      <ellipse cx="150" cy="85" rx="44" ry="34" fill="#2d4a30"/>
+      <!-- Lighter highlight clusters -->
+      <ellipse cx="125" cy="120" rx="28" ry="22" fill="#4a7350" opacity="0.5"/>
+      <ellipse cx="175" cy="115" rx="26" ry="20" fill="#4a7350" opacity="0.45"/>
+      <ellipse cx="150" cy="95" rx="22" ry="18" fill="#4a7350" opacity="0.5"/>
+      <ellipse cx="100" cy="160" rx="22" ry="18" fill="#4a7350" opacity="0.4"/>
+      <ellipse cx="200" cy="158" rx="20" ry="16" fill="#4a7350" opacity="0.4"/>
+      <!-- Root flares -->
+      <path d="M150 370 Q135 365 118 372" stroke="#2d4a30" stroke-width="5" stroke-linecap="round"/>
+      <path d="M150 370 Q165 364 182 371" stroke="#2d4a30" stroke-width="5" stroke-linecap="round"/>
+      <path d="M150 370 Q140 360 128 368" stroke="#2d4a30" stroke-width="3.5" stroke-linecap="round" opacity="0.6"/>
+      <path d="M150 370 Q160 360 172 367" stroke="#2d4a30" stroke-width="3.5" stroke-linecap="round" opacity="0.6"/>
+    </svg>
   </div>
   <div class="about-text reveal">
     <p class="section-label">Our Philosophy</p>
@@ -569,7 +612,7 @@
   <h2 class="section-title" style="text-align:center">Start a Conversation</h2>
   <div class="divider" style="margin:0 auto 1.5rem;"></div>
   <p>If you have built something worth keeping, we would like to talk. We are discreet, straightforward, and genuinely long-term in our thinking.</p>
-  <form class="contact-form" onsubmit="return false;">
+  <form class="contact-form" onsubmit="window.location.href='mailto:george@everoakholdings.com';return false;">
     <div class="form-row">
       <input type="text" placeholder="Your Name" />
       <input type="email" placeholder="Email Address" />
@@ -577,7 +620,7 @@
     <input type="text" placeholder="Company Name" />
     <input type="text" placeholder="Industry / Business Type" />
     <textarea placeholder="Tell us about your business or inquiry..."></textarea>
-    <button type="submit" class="btn btn-solid" style="cursor:pointer;font-family:inherit;">Send Message</button>
+    <button type="submit" class="btn btn-solid" style="cursor:pointer;font-family:inherit;" onclick="window.location.href='mailto:george@everoakholdings.com?subject=Business Inquiry&body='+encodeURIComponent('Name: '+document.querySelector('input[type=text]').value+'\nEmail: '+document.querySelector('input[type=email]').value+'\n');">Send Message</button>
   </form>
 </section>
 
