@@ -14,8 +14,8 @@
       --forest-light: #3d6142;
       --gold:     #c9a84c;
       --gold-lt:  #e0c070;
-      --cream:    #f5f0e8;
-      --cream-dk: #ede5d4;
+      --cream:    #f0ebe1;
+      --cream-dk: #e8e0d2;
       --bark:     #8b7355;
       --white:    #ffffff;
       --text:     #2a2a22;
@@ -373,6 +373,36 @@
     }
     .btn:hover { transform: translateY(-1px); }
     .btn:active { transform: translateY(0); }
+
+    .george-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+      align-items: flex-start;
+      max-width: 760px;
+      margin-top: 2rem;
+    }
+    .george-photo-col {
+      flex: 0 0 220px;
+      width: 220px;
+    }
+    .george-img {
+      width: 220px;
+      height: 280px;
+      object-fit: cover;
+      object-position: center 15%;
+      filter: grayscale(20%);
+      display: block;
+    }
+    .george-bio-col {
+      flex: 1;
+      min-width: 0;
+    }
+    @media (max-width: 600px) {
+      .george-wrapper { flex-direction: column; }
+      .george-photo-col { width: 100%; flex: none; }
+      .george-img { width: 100%; height: 300px; }
+    }
   </style>
 </head>
 <body>
@@ -431,7 +461,7 @@
     <img
       src="./oak-tree.jpg"
       alt="Everoak oak tree illustration"
-      style="width:100%;max-width:560px;height:auto;mix-blend-mode:multiply;opacity:0.88;"
+      style="width:100%;max-width:520px;height:auto;"
     />
   </div>
   <div class="about-text reveal">
